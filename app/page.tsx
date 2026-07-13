@@ -234,7 +234,14 @@ export default function Home() {
           <div className="wrap">
             <div className="join-panel">
               <div><div className="kicker">Learn in Public</div><h2>第一轮真实实践，正在准备</h2><p>网站目前处于公开搭建阶段。报名和订阅入口将在首轮课例创造营边界确定后开放。</p></div>
-              <span className="btn btn-primary btn-disabled" aria-disabled="true">报名入口即将开放</span>
+             <a
+              className="btn btn-primary"
+              href="./wechat-qr.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              查看微信二维码 <span className="arrow">→</span>
+            </a>
             </div>
           </div>
         </section>
