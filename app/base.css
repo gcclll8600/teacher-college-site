@@ -1,0 +1,82 @@
+:root {
+  --paper: #f7f1e7;
+  --paper-2: #fffaf1;
+  --ink: #17233a;
+  --muted: #667085;
+  --blue: #1769ff;
+  --blue-dark: #0b43ac;
+  --coral: #ff6247;
+  --yellow: #f4c84b;
+  --mint: #cfe9df;
+  --line: #c9c3b8;
+  --white: #fffdf8;
+  --shadow: 5px 5px 0 rgba(23, 35, 58, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Avenir Next", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.01em;
+}
+button, a { font: inherit; }
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(1420px, calc(100% - 80px)); margin: 0 auto; }
+
+.site-header { height: 92px; border-bottom: 1.5px solid var(--ink); background: rgba(247, 241, 231, 0.97); position: sticky; top: 0; z-index: 10; }
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.brand { display: flex; align-items: center; gap: 15px; font-size: 22px; font-weight: 750; letter-spacing: -0.02em; }
+.brand-mark { position: relative; width: 42px; height: 42px; border: 2px solid var(--ink); background: var(--yellow); border-radius: 50%; }
+.brand-mark::before, .brand-mark::after { content: ""; position: absolute; background: var(--blue); border: 2px solid var(--ink); }
+.brand-mark::before { width: 17px; height: 17px; right: -6px; top: -5px; border-radius: 50%; }
+.brand-mark::after { width: 12px; height: 12px; left: -5px; bottom: -4px; transform: rotate(18deg); }
+.nav-links { display: flex; gap: 38px; align-items: center; font-size: 15px; font-weight: 650; }
+.nav-links a { position: relative; padding: 11px 0; }
+.nav-links a::after { content: ""; height: 3px; width: 0; background: var(--coral); position: absolute; left: 0; bottom: 4px; transition: 0.22s; }
+.nav-links a:hover::after, .nav-links a:focus-visible::after { width: 100%; }
+.nav-action { padding: 12px 20px !important; border: 1.5px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--white); }
+.nav-action::after { display: none; }
+
+.hero { min-height: 600px; border-bottom: 1.5px solid var(--ink); position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.18fr 0.82fr; min-height: 600px; }
+.hero-copy { padding: 88px 72px 70px 0; display: flex; flex-direction: column; justify-content: center; }
+.eyebrow { display: flex; align-items: center; gap: 12px; color: var(--blue-dark); font-size: 14px; font-weight: 800; letter-spacing: 0.14em; }
+.eyebrow::before { content: ""; display: inline-block; width: 36px; height: 5px; background: var(--coral); border-radius: 10px; }
+h1, h2, .board-title, .project-card h3, .open-card h3 { font-family: "Songti SC", "STSong", "Noto Serif SC", serif; }
+h1 { font-size: clamp(48px, 5vw, 76px); line-height: 1.13; letter-spacing: -0.055em; margin: 25px 0 28px; max-width: 870px; }
+.hero-copy p { font-size: 19px; line-height: 1.8; color: #42516b; max-width: 780px; margin: 0 0 34px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 23px; border: 1.5px solid var(--ink); border-radius: 8px; font-weight: 750; transition: 0.18s ease; }
+.btn-primary { background: var(--blue); color: white; box-shadow: 4px 4px 0 var(--ink); }
+.btn-primary:not(.btn-disabled):hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.btn-secondary { background: transparent; }
+.btn-secondary:hover { background: var(--white); }
+.btn-disabled { opacity: 0.72; cursor: default; }
+.arrow { font-size: 21px; margin-left: 18px; }
+.hero-board { border-left: 1.5px solid var(--ink); background: var(--blue); padding: 60px 48px; display: flex; align-items: center; justify-content: center; position: relative; }
+.hero-board::before { content: ""; position: absolute; width: 86px; height: 86px; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); right: 45px; top: 40px; box-shadow: 10px 10px 0 rgba(23, 35, 58, 0.2); }
+.hero-board::after { content: ""; position: absolute; width: 48px; height: 48px; border: 2px solid var(--ink); background: var(--coral); left: 45px; bottom: 42px; transform: rotate(15deg); }
+.notice-board { width: 100%; background: var(--paper-2); border: 2px solid var(--ink); padding: 31px; box-shadow: 10px 10px 0 rgba(23, 35, 58, 0.44); transform: rotate(1.1deg); position: relative; z-index: 1; }
+.pin { width: 14px; height: 14px; background: var(--coral); border: 2px solid var(--ink); border-radius: 50%; position: absolute; left: 50%; top: 15px; transform: translateX(-50%); }
+.board-label { font-size: 12px; letter-spacing: 0.16em; color: var(--muted); font-weight: 800; margin-bottom: 23px; }
+.board-title { font-size: 32px; line-height: 1.25; margin-bottom: 28px; }
+.week-list { display: grid; gap: 13px; }
+.week { display: grid; grid-template-columns: 38px 1fr auto; gap: 13px; align-items: center; border-top: 1px solid var(--line); padding-top: 13px; }
+.week-date { font-weight: 800; color: var(--blue); }
+.week-name { font-size: 14px; font-weight: 680; }
+.week-state { font-size: 12px; border: 1px solid var(--ink); padding: 4px 8px; border-radius: 999px; background: var(--mint); }
+
+.signal-bar { background: var(--ink); color: white; }
+.signals { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 14px; }
+.signal-item { display: flex; align-items: center; gap: 10px; }
+.signal-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 4px rgba(255, 98, 71, 0.18); }
+.signals strong { color: var(--yellow); }
+
+section { padding: 88px 0; }
+.section-head { display: flex; justify-content: space-between; gap: 40px; align-items: flex-end; margin-bottom: 38px; }
+.kicker { font-size: 13px; color: var(--blue); font-weight: 850; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+h2 { font-size: clamp(38px, 3.5vw, 52px); letter-spacing: -0.035em; margin: 0; line-height: 1.2; }
+.section-intro { font-size: 16px; line-height: 1.7; color: var(--muted); max-width: 520px; margin: 0; }
